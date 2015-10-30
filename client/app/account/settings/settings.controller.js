@@ -21,7 +21,7 @@ angular.module('bookclubApp')
     $scope.addDetails = function(){
       console.log(Auth.getCurrentUser());
       var usId = Auth.getCurrentUser()._id;
-        $http.put('api/users/details',{id:usId,name:$scope.userName,city:$scope.userCity}).success(function(data){
+        $http.put('api/users/details',{id:usId,name:$scope.userName,city:$scope.userCity,region:$scope.userRegion}).success(function(data){
           console.log(data);
        });
     }

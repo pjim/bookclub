@@ -84,6 +84,7 @@ exports.addDetails = function(req,res,next){
   User.findById(userId,function(err,user){
     user.city = req.body.city;
     user.name = req.body.name;
+    user.region = req.body.region;
     user.save(function(err){
       if(err) return validationError(res,err);
       res.status(200).send('OK');
