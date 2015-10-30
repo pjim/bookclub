@@ -3,6 +3,8 @@
 angular.module('bookclubApp')
   .controller('AllBooksCtrl', function ($scope,$http) {
     $scope.message = 'Hello';
-    $scope.bookList = [{title:'bobsbook'},{title:'billsbook'}];
-    
+    $http.get('api/books').success(function(data){
+      console.log(data);
+      $scope.bookList = data;
+    });
   });
