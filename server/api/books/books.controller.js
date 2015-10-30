@@ -10,6 +10,14 @@ exports.index = function(req, res) {
     return res.status(200).json(bookss);
   });
 };
+//get a subset of Books
+exports.showGroup = function(req,res){
+  Books.find({owner:req.body.owner},function(err,books){
+
+    if(err){return handleError(res,err);}
+    return res.status(200).json(books);
+  });
+};
 
 // Get a single books
 exports.show = function(req, res) {

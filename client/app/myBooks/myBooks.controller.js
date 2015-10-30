@@ -3,7 +3,10 @@
 angular.module('bookclubApp')
   .controller('MyBooksCtrl', function ($scope,$http,Auth) {
     $scope.message = 'Hello';
-    $scope.myBookList = [{title:"examplebook"},{title:'secondexamplebook'}];
+    $http.post('api/books/sub',{'owner':Auth.getCurrentUser().name}).success(function(data){
+      console.log(data);
+      $scope.myBookList = data;
+    });
     $scope.addNewBook = function(){
       var newBook = {
         title:$scope.newBookTitle,
