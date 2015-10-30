@@ -20,9 +20,9 @@ angular.module('bookclubApp')
 		};
     $scope.addDetails = function(){
       console.log(Auth.getCurrentUser());
-      // var usId = Auth.getCurrentUser()._id;
-        // $http.put('api/users/details',{id:usId,name:$scope.userName,city:$scope.userCity}).success(function(data){
-        //   console.log(data);
-      //  });
+      var usId = Auth.getCurrentUser()._id;
+        $http.put('api/users/details',{id:usId,name:$scope.userName,city:$scope.userCity}).success(function(data){
+          console.log(data);
+       });
     }
   });

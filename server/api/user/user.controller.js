@@ -80,7 +80,7 @@ exports.changePassword = function(req, res, next) {
 };
 
 exports.addDetails = function(req,res,next){
-  userId = req.body.id;
+  var userId = req.body.id;
   User.findById(userId,function(err,user){
     user.city = req.body.city;
     user.name = req.body.name;
