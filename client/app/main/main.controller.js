@@ -20,3 +20,10 @@ angular.module('bookclubApp')
       $http.delete('/api/things/' + thing._id);
     };
   });
+  $(function(){
+       console.log('query load');
+       $(".type-space").typed({
+           strings: ["First hthththth.", "Second sentence."],
+           typeSpeed: 1
+       });
+   });

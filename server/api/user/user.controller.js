@@ -79,6 +79,19 @@ exports.changePassword = function(req, res, next) {
   });
 };
 
+exports.addDetails = function(req,res){
+  userId = req.body.id;
+  User.findById(userId,function(err,user){
+    user.city = req.body.city;
+    user.name = req.body.name;
+    user.save(function(err){
+      if(err) return validationError(res,err);
+      res.status(200).send('OK');
+    })
+
+  });
+};
+
 /**
  * Get my info
  */

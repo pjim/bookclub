@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('bookclubApp')
-  .controller('SettingsCtrl', function ($scope, User, Auth) {
+  .controller('SettingsCtrl', function ($scope, User, Auth,$http) {
     $scope.errors = {};
 
     $scope.changePassword = function(form) {
@@ -18,4 +18,10 @@ angular.module('bookclubApp')
         });
       }
 		};
+    $scope.addDetails = function(){
+       var usId = Auth.getCurrentUser()._id;
+        $http.put('api/user/details',{id:usId,name:$scope.userName,city:$scope.userCity}).success(function(data){
+          console.log(data);
+        });
+    }
   });

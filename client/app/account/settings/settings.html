@@ -37,10 +37,10 @@
       </form>
       <form name="city-form" class="form" ng-submit="">
       <label for="">Name</label>
-      <input type="text">
+      <input type="text" ng-model="userName">
       <label for="">city</label>
-      <input type="text">
-      <button class="btn">save changes</button>
+      <input type="text" ng-model="userCity">
+      <button class="btn" ng-click="addDetails()">save changes</button>
       </form>
     </div>
   </div>
