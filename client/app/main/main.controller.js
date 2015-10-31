@@ -19,5 +19,5 @@ angular.module('bookclubApp')
     $scope.deleteThing = function(thing) {
       $http.delete('/api/things/' + thing._id);
     };
-    $scope.isLoggedIn = Auth.isLoggenI();
+    $scope.isLoggedIn = Auth.isLoggedIn;
   });
