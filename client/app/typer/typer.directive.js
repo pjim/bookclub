@@ -8,7 +8,8 @@ angular.module('bookclubApp')
       link: function (scope, element, attrs) {
 
         element.find('p').typed({
-          strings:["Welcome to Book Land","Here you can store your books and loan books from others"],
+          strings:["Welcome to Book Land","Here you can swap old books  and find something new to read"],
+
           typeSpeed:0});
       }
     };
