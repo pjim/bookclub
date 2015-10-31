@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('bookclubApp')
-  .controller('MainCtrl', function ($scope, $http) {
+  .controller('MainCtrl', function ($scope, $http,Auth) {
     $scope.awesomeThings = [];
 
     $http.get('/api/things').success(function(awesomeThings) {
@@ -19,11 +19,5 @@ angular.module('bookclubApp')
     $scope.deleteThing = function(thing) {
       $http.delete('/api/things/' + thing._id);
     };
+    $scope.isLoggedIn = Auth.isLoggenI();
   });
-  $(function(){
-       console.log('query load');
-       $(".type-space").typed({
-           strings: ["First hthththth.", "Second sentence."],
-           typeSpeed: 1
-       });
-   });
