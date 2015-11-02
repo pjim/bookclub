@@ -6,7 +6,7 @@
 <div class="my-book-list border-box">
   <h2>Your currently added books</h2>
   <ul>
-    <li ng-repeat="books in myBookList">{{books.title}}</li>
+    <li ng-repeat="books in myBookList">{{books.title}} by {{books.author}}</li>
   </ul>
 </div>
 </div>
@@ -20,7 +20,7 @@
   <input type="text" name="" id="" value="book title" ng-model="newBookTitle">
   <label for="">author</label>
   <input type="text" ng-model="newBookAuthor">
-  <button class="btn" ng-click="addNewBook()">submit</button>
+  <button class="btn" ng-click="addNewBook()">Add for My Books</button>
 </form>
 </div>
 </div>
